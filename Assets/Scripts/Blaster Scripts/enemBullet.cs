@@ -12,13 +12,11 @@ public class enemBullet : MonoBehaviour
     public float despawnTime;
     private float despawnTimer;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb.velocity = -transform.up * bulletSpeed - transform.right*bulletHorz;
 
         despawnTimer = Time.time + despawnTime;
-        //Debug.Log("Spawned bullet");
     }
 
     void Update() {
@@ -34,7 +32,6 @@ public class enemBullet : MonoBehaviour
         {
             Destroy(col.gameObject);
             Destroy(gameObject);
-            //Debug.Log("hit");
         }
         if (col.gameObject.tag == "Player")
         {
@@ -50,12 +47,3 @@ public class enemBullet : MonoBehaviour
         }
     }
 }
-
-/**
-    void OnTriggerEnger2D (Collider2D hitInfo)
-    {
-        Debug.Log(hitInfo.name);
-        Destroy(gameObject);
-    }
-}
-**/

@@ -7,6 +7,6 @@ public class Open_Ass1 : MonoBehaviour
 {
     public void Open()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(5);
     }
 }

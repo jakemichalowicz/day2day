@@ -12,7 +12,6 @@ public class drop_swiftScript : MonoBehaviour
     void Start()
     {
         rigidDrop.velocity = -transform.up * dropSpeed;
-        //gameObject.tag = "Enemy";
     }
 
     void OnCollisionEnter2D(Collision2D col)

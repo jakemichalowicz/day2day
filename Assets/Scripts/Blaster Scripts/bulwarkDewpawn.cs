@@ -10,8 +10,7 @@ public class bulwarkDewpawn : MonoBehaviour
     {
         despawnTime = Time.time + despawnIncr;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (Time.time >= despawnTime) {

@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Blaster Scenes/Scene_endGame.unity
     guid: a132eee8aeb015a4f964385f25b5e020
+  - enabled: 1
+    path: Assets/Scenes/Blaster Scenes/Scene_Assignments.unity
+    guid: f3af5475d128612448192ac72916e604
+  - enabled: 1
+    path: Assets/Scenes/Blaster Scenes/assmt_1.unity
+    guid: 963ae705983b89f40add0c3924115c55
+  - enabled: 1
+    path: Assets/Scenes/Blaster Scenes/assmt_2.unity
+    guid: d6fea691b94c0054a9363ba92b8e6b0f
   m_configObjects: {}

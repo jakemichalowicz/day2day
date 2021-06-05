@@ -8,24 +8,18 @@ public class Bullet : MonoBehaviour
 {
     public float bulletSpeed = 20f;
     public Rigidbody2D rb;
-    public AudioSource audioSplat;
     public float despawnTime;
     private float despawnTimer;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.up * bulletSpeed;
-        audioSplat = GetComponent<AudioSource>();
-
         despawnTimer = Time.time + despawnTime;
-        //Debug.Log("Spawned bullet");
     }
 
     void Update() {
         if (despawnTimer < Time.time) {
             Destroy(gameObject);
-            //Debug.Log("DESPAWN BULLET");
         }
     }
 
@@ -33,20 +27,17 @@ public class Bullet : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            audioSplat.Play();
             Destroy(col.gameObject);
             Destroy(gameObject);
             scoreScript.scoreValue += 1;
-            //Debug.Log("hit");
+            Debug.Log("Hit");
+        }
+        if (col.gameObject.tag == "Ship" || col.gameObject.tag == "Whale")
+        {
+            Destroy(col.gameObject);
+            Destroy(gameObject);
+            scoreScript.scoreValue += 1;
+            Debug.Log("Hit");
         }
     }
 }
-
-/**
-    void OnTriggerEnger2D (Collider2D hitInfo)
-    {
-        Debug.Log(hitInfo.name);
-        Destroy(gameObject);
-    }
-}
-**/

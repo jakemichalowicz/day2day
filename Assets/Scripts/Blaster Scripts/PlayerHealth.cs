@@ -41,31 +41,22 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(-10);
         }
     }
-
-    /** void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        if (currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
-        healthBar.SetHealth(currentHealth);
-    } **/
     void TakeDamage(int damage)
     {
-        Debug.Log("Damage is: " + damage);
+        //Debug.Log("Damage is: " + damage);
         currentHealth -= damage;
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
+            Debug.Log("Health is" + currentHealth);
+        } else {
+            if(damage < 0) {
+            bar.healthBarSetHeal();
+            }
         }
         if(damage > 0) {
-            Debug.Log("Call scale change");
             bar.healthBarSet();
         }
-        if(damage < 0) {
-            bar.healthBarSetHeal();
-        }
-        Debug.Log("Current health: " + currentHealth);
+        //Debug.Log("Current health: " + currentHealth);
     }
 }
